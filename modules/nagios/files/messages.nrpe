@@ -1,0 +1,39 @@
+# check_procs
+avc:  denied  { getattr } for  pid=6203 comm="check_procs" path="/usr/sbin/nrpe" dev="vda2" ino=136026409 scontext=system_u:system_r:nagios_system_plugin_t:s0 tcontext=system_u:object_r:nrpe_exec_t:s0 tclass=file
+# check_disk
+avc:  denied  { getattr } for  pid=30142 comm="check_disk" path="/dev/shm" dev=tmpfs ino=5174 scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:tmpfs_t:s0 tclass=dir
+avc:  denied  { getattr } for  pid=11968 comm="check_disk" path="/boot" dev=sda1 ino=2 scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:boot_t:s0 tclass=dir
+avc:  denied  { getattr } for  pid=12908 comm="check_disk" path="/home" dev=dm-2 ino=2 scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:home_root_t:s0 tclass=dir
+avc:  denied  { getattr } for  pid=5438 comm="check_disk" path="/proc/bus/usb" dev=usbfs ino=5219 scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:usbfs_t:s0 tclass=dir
+avc:  denied  { getattr } for  pid=11462 comm="check_disk" path="/sys/kernel/config" dev="configfs" ino=7100 scontext=system_u:system_r:nagios_checkdisk_plugin_t:s0 tcontext=system_u:object_r:configfs_t:s0 tclass=dir
+avc:  denied  { getattr } for  pid=3195 comm="check_disk" path="/proc/fs/nfsd" dev=nfsd ino=1 scontext=system_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:nfsd_fs_t:s0 tclass=dir
+avc:  denied  { getattr } for  pid=4262 comm="check_disk" path="/export/gv0" dev=dm-1 ino=64 scontext=system_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:file_t:s0 tclass=dir
+avc:  denied  { getattr } for  pid=26371 comm="check_disk" path="/var/lib/mysql" dev=dm-1 ino=2 scontext=system_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:mysqld_db_t:s0 tclass=dir
+avc:  denied  { search getattr } for  pid=19943 comm="check_disk" name="libvirt" dev=dm-0 ino=393221 scontext=system_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:virt_var_lib_t:s0 tclass=dir
+avc:  denied  { search getattr } for  pid=13469 comm="check_disk" path="/qemu-save" dev=dm-15 ino=128 scontext=system_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:qemu_var_run_t:s0 tclass=dir
+avc:  denied  { getattr } for  pid=3055 comm="check_disk" path="/sys/fs/pstore" dev="pstore" ino=1151 scontext=system_u:system_r:nagios_checkdisk_plugin_t:s0 tcontext=system_u:object_r:pstorefs_t:s0 tclass=dir
+# check_megaraid_sas
+avc:  denied  { getattr ioctl } for  pid=5800 comm="check_megaraid_" path="/usr/share/perl5/strict.pm" dev=sda1 ino=270154 scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:usr_t:s0 tclass=file
+avc:  denied  { read open } for  pid=6349 comm="check_megaraid_" name="strict.pm" dev=sda1 ino=270154 scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:usr_t:s0 tclass=file
+avc:  denied  { execute read open execute_no_trans } for  pid=7446 comm="check_megaraid_" name="sudo" dev=sda1 ino=140315 scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:sudo_exec_t:s0 tclass=file
+avc:  denied  { sys_resource audit_write sys_admin } for  pid=9119 comm="sudo" capability=24  scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=unconfined_u:system_r:nrpe_t:s0 tclass=capability
+avc:  denied  { create write nlmsg_relay read } for  pid=9710 comm="sudo" scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=unconfined_u:system_r:nrpe_t:s0 tclass=netlink_audit_socket
+avc:  denied  { read getattr open write } for  pid=10254 comm="MegaCli" name="megaraid_sas_ioctl_node" dev=devtmpfs ino=9682091 scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=unconfined_u:object_r:device_t:s0 tclass=chr_file
+avc:  denied  { execute } for  pid=12537 comm="MegaCli" path="/opt/lsi/3rdpartylibs/x86_64/libsysfs.so.2.0.2" dev=sda1 ino=140630 scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:usr_t:s0 tclass=file
+avc:  denied  { write add_name } for  pid=5537 comm="MegaCli" name="megaraid_sas_ioctl_node" dev=devtmpfs ino=4 scontext=system_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:device_t:s0 tclass=dir
+avc:  denied  { mknod } for  pid=6439 comm="MegaCli" capability=27  scontext=system_u:system_r:nrpe_t:s0 tcontext=system_u:system_r:nrpe_t:s0 tclass=capability
+avc:  denied  { create } for  pid=8122 comm="MegaCli" name="megaraid_sas_ioctl_node" scontext=system_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:device_t:s0 tclass=chr_file
+# check_couchbase
+avc:  denied  { execute_no_trans } for  pid=4202 comm="cbstats" path="/opt/couchbase/lib/python/cbstats" dev=vda2 ino=13654 scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:lib_t:s0 tclass=file
+avc:  denied  { name_connect } for  pid=4639 comm="python" dest=11219 scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:port_t:s0 tclass=tcp_socket
+# check_memcached
+avc:  denied  { name_connect } for  pid=24176 comm="check_memcached" dest=11211 scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:memcache_port_t:s0 tclass=tcp_socket
+# check_conntrack
+avc:  denied  { search } for  pid=25903 comm="sysctl" scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:sysctl_net_t:s0 tclass=dir
+avc:  denied  { read } for  pid=26419 comm="sysctl" scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:sysctl_net_t:s0 tclass=file
+# check_mysql_health
+avc:  denied  { search } for  pid=728 comm="check_mysql_hea" name="mysql" dev=vda2 ino=5374963 scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:mysqld_db_t:s0 tclass=dir
+avc:  denied  { write } for  pid=2112 comm="check_mysql_hea" name="mysql.sock" dev=vda2 ino=5375049 scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=unconfined_u:object_r:mysqld_var_run_t:s0 tclass=sock_file
+avc:  denied  { connectto } for  pid=3551 comm="check_mysql_hea" path="/var/lib/mysql/mysql.sock" scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=unconfined_u:system_r:mysqld_t:s0 tclass=unix_stream_socket
+avc:  denied  { create add_name write } for  pid=19390 comm="check_mysql_hea" name="tmp" dev=vda2 ino=5111844 scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:tmp_t:s0 tclass=dir
+avc:  denied  { create write open getattr ioctl read } for  pid=22861 comm="check_mysql_hea" name="tmp" scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=unconfined_u:object_r:tmp_t:s0 tclass=file
