@@ -8,7 +8,8 @@ Vagrant.configure("2") do |config|
 		v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
 		v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
 	end
-	config.vm.box = "puppetlabs/debian-7.4-64-puppet"
+	config.vm.box = "debian-wheezy-7.6-puppet"
+	config.vm.box_url = "https://www.dropbox.com/s/pt8g3hyeo4yqjcc/debian-wheezy-7.6-puppet.box?dl=1"
 	config.vm.network "forwarded_port", guest: 80, host: 8080
 
 	config.vm.provision :puppet do |puppet|
