@@ -60,8 +60,6 @@ class ariadne::checkout {
 		"/opt/ariadne/files/templates",
 		"/opt/ariadne/files/temp",
 		"/opt/ariadne/site/lib/configs/svn/",
-		"/opt/ariadne/site/lib/configs/svn/config/",
-		"/opt/ariadne/site/lib/configs/svn/servers/",
 	]
 
 	file { $files:
