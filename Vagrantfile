@@ -8,10 +8,15 @@ Vagrant.configure("2") do |config|
 		v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
 		v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
 	end
-	config.vm.box = "mjrider/debian-7-puppet"
+	config.vm.box = "debian/jessie64"
 	config.vm.network "forwarded_port", guest: 80, host: 8080
 
+	# install puppet
+	config.vm.provision "shell", path: "provision.sh"
+
 	config.vm.provision :puppet do |puppet|
+		puppet.working_directory = "/run/vagrant-puppet"
+		puppet.temp_dir = "/run/"
 		puppet.manifests_path = "manifests"
 		puppet.module_path = "modules"
 		puppet.manifest_file = "site.pp"
