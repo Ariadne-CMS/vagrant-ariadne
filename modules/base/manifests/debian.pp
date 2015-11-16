@@ -1,4 +1,4 @@
-class base::wheezy {
+class base::debian {
 	class{ 'apt':
 		purge_sources_list   => true,
 		purge_sources_list_d   => true,
@@ -6,9 +6,6 @@ class base::wheezy {
 
 	include apt
 
-	class { 'apt::release':
-		release_id => 'wheezy',
-	}
 	apt::source { 'debian':
 		location          => 'http://ftp.nl.debian.org/debian/',
 		repos             => 'main contrib non-free',

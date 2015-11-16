@@ -1,5 +1,5 @@
 node ariadne-dev {
-	include base::wheezy
+	include base::debian
 	include mysql::server
 	include ariadne::depends
 
