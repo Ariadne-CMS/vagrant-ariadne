@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
 		v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
 		v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
 	end
-	config.vm.box = "debian/jessie64"
+	config.vm.box = "debian/contrib-jessie64"
 	config.vm.network "forwarded_port", guest: 80, host: 8080
 
 	# install puppet
