@@ -17,7 +17,7 @@ class ariadne::checkout {
 	vcsrepo { "/opt/ariadne/ariadne":
 		ensure   => present,
 		provider => git,
-		source   => "https://github.com/Ariadne-CMS/ariadne/",
+		source   => "git://github.com/Ariadne-CMS/ariadne/",
 		require => [ File['/opt/ariadne/'], Package['git'] ],
 		before => File['/opt/ariadne/apache/ariadne'],
 		owner => "vagrant",
